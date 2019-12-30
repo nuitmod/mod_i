@@ -1,8 +1,13 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
 body {
   font-weight: 300;
   min-height: 100vh;
   font-family: -apple-system, BlinkMacSystemFont, 'Roboto', 'Segoe UI';
-  ont-family: Arial;
+  font-family: Arial;
 }
 
 header {
@@ -31,10 +36,6 @@ main {
   grid-auto-flow: row dense;
 }
 
-*{
-  margin: 0;
-  padding: 0;
-}
 
 #burg a{
   display: block;
