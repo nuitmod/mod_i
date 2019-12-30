@@ -53,6 +53,26 @@
 
     <img src="./images/mode.jpg" alt="" height="229" width="129">
 
+
+    <div class="tech-info">
+      <div id="i1">no jquery</div>
+      <div id="u1">no jq function</div>
+      <input id='bt' type="button" name="click" value="click for hide">
+      <div id="dat">area for input</div>
+    </div>
+    <script src=../static/js/to_main.js></script>
+    <script>
+      $('#i1').html("jquery include")
+      $('.tech-info').hide();
+
+
+      $('#burg').on('click', function(){
+        $('.mobile-tab').slideToggle(600)
+      })
+
+
+      $('#u1').html("to_main.js is on");
+    </script>
     </section>
     </main>
     <script src="./index.js" type="module"></script>
