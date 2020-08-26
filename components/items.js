@@ -3,38 +3,41 @@ import { html, Component, render } from 'https://unpkg.com/htm/preact/index.mjs?
 import { observer } from '../modules/mobx_preact.module.js';
 import imob from "./mobx_store.js";
 import { autorun, toJS } from '../modules/mobx.module.js';
+import  * as $ from "https://unpkg.com/jquery@3.3.1/dist/jquery.min.js";
+//import  * as _ from "https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.19/lodash.min.js";
 
-var name="Ruth";
 
-let change_st=e=>{
-  imob.inf=name;
+var $$ = window.$;
+//var __ = window._;
+
+var temp={
+  name: ''
 }
-
-var show_item=e=>{
-  console.log(e.target.id);
-}
-
-var filter_1=wm=>{
-  return wm.active!=false;
-}
-
-
-//var term=imob.data.map(w=>toJS(w)); console.log(term);
 
 var add_to_bug=e=>{
   console.log(e.target.id);
 //  console.log(term)
 }
 
-var show_big=()=>{
-//  render(big_item, document.getElementById("big_it"))
+var show_res=e=>{
+//  e.preventDefault();
+//  console.log(e.target.value);
+  imob.type=e.target.value; console.log(temp.name);
+  temp.name=""; console.log(temp.name);
+  $$('.big_i').hide();
+}
+
+var handle_submit=e=>{
+  e.preventDefault();
+//  temp.name=""
+  console.log(imob.type);
 }
 
 var I_search=()=>{
 
-var big_item=imob.data.filter(wm=>wm.active!=false).map(wm=>html`
-  <div class="big_i">
-    <img id=${wm.img_id} src="./img/${wm.img_id}.JPG"  height="109" width="72" />
+var big_item=imob.data.filter(wm=>wm.active==true).map(wm=>html`
+  <div class="big_i" key=${wm.id}>
+    <img id=${wm.img_id} src="./img/${wm.img_id}.JPG"  height="129" width="92" />
     <div>
       <li>name: ${wm.name} </li>
       <li>color: ${wm.color} </li>
@@ -45,7 +48,7 @@ var big_item=imob.data.filter(wm=>wm.active!=false).map(wm=>html`
   </div>`)
 
 
-var wm_list=imob.data.map(wm=>html`
+var wm_list=imob.data.filter(w=>w.category==imob.type).map(wm=>html`
   <div class="list" key=${wm.id}>
     <img id=${wm.img_id} src="./img/${wm.img_id}.JPG"  height="89" width="52" />
      <div>
@@ -59,9 +62,9 @@ var wm_list=imob.data.map(wm=>html`
 
 
 return html`
-  <input placeholder="${imob.inf}" oninput="${e=>imob.inf=e.target.value}"  />
-  <button value="change" onclick=${change_st}>change</button>
-  <button id="" onclick=${show_big}>show_big</button>
+<form onsubmit=${handle_submit}>
+  <input placeholder="${temp.name}" onchange=${show_res} oninput="${e=>imob.inf=e.target.value}"  />
+</form>
   <h4>${imob.inf}</h4>
   ${wm_list}
   ${big_item}
@@ -69,3 +72,4 @@ return html`
 }
 
 export default observer(I_search);
+//export {ch_filter}
