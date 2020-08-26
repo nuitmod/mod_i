@@ -4,15 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./css/styles.css">
   <link rel="manifest" href="./manifest.webmanifest">
-  <script
-  src="https://code.jquery.com/jquery-3.4.1.js"
-  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-  crossorigin="anonymous"></script>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="io_proj" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <link rel=icon sizes=192x192 href="assets/logo-192.png">
+  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
   <title>Mod pwa</title>
 </head>
 <body>
+  <!--
   <header>
   </header>
   <main>
@@ -64,7 +67,14 @@
     </script>
     </section>
     </main>
-    <script src="./index.js" type="module"></script>
+-->
+<div id="hdr">mod</div>
+<div id="root"></div>
+
+<script type="module" src='./main.js'></script>
+<script type="module" src='./app.js'></script>
+<script src="./index.js" type="module"></script>
+<script src="./components/mobx_store.js" type="module"></script>
 </body>
 
 </html>

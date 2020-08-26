@@ -1,3 +1,4 @@
+/*
 import './news-article.js';
 import { topHeadlinesUrl } from './newsApi.js';
 
@@ -19,8 +20,9 @@ async function getNews() {
     el.article = article;
     main.appendChild(el);
   });
-  */
+  
 }
+*/
 
 async function registerSW() {
   if ('serviceWorker' in navigator) {
