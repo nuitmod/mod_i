@@ -76,7 +76,7 @@ body{
 /*big item */
 .big_i{
   background: rgba(0, 0, 0, 0.4);
-  padding: 10px 35px;
+  padding: 9px 25px;
 /*  position: absolute;
   width: 100%;*/
   top: 120px;
@@ -86,10 +86,10 @@ body{
   position: relative;
   float: right;
   margin-right: 50px; /* Отступ справа */
-  font-weight: bold;
+  font-weight: bolder;
 }
 #btn{
-  padding-top: 75px;
+  padding-top: 85px;
   text-align: center;
 }
 input,h6{
