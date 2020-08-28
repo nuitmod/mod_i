@@ -1,15 +1,19 @@
 import { html, Component, render } from 'https://unpkg.com/htm/preact/index.mjs?module';
 import { observer } from '../modules/mobx_preact.module.js';
 import imob from "./mobx_store.js";
-import  * as $ from "https://unpkg.com/jquery@3.3.1/dist/jquery.min.js";
+import  * as jQuery from "https://unpkg.com/jquery@3.3.1/dist/jquery.min.js";
 
-var $$ = window.$;
-
-
+var $ = window.jQuery;
+/*
+$('.mobile_items a').on('click', ()=>{
+  $('.big_i').hide();
+})
+*/
 var select_i=i=>{
-//  console.log(i.name);
+  imob.inf=i.name;
   imob.type=i.name;
-  $$('.big_i').hide();
+  $('.big_i').hide();
+  imob.data.forEach(wm=>wm.active=false)
 }
 
 

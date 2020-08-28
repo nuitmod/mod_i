@@ -1,11 +1,11 @@
-const cacheName = 'news-v1';
+const cacheName = 'mod_i-v1';
 const staticAssets = [
   './',
   './index.html',
-  './styles.css',
+  './css/styles.css',
   './index.js',
-  './newsApi.js',
-  './news-article.js'
+  './app.js',
+  './main.js'
 ];
 
 self.addEventListener('install', async e => {
