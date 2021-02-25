@@ -13,11 +13,41 @@
     <!-- Import other AMP Extensions here -->
     <script async custom-element="amp-install-serviceworker" src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
     <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+    <script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
+    <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
+    <script async custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js"></script>
+    <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
     <style amp-custom>
     /* Add your styles here */
+  :root{
+    --bg-main: ghostwhite;
+    --bg-menu: black;
+  }
+  *{
+    margin: 0;
+    padding: 0;
+  }
+  body{
+    -webkit-text-size-adjust: 100%;
+    background: var(--bg-main);
+    font-size: 10px;
+  }
+  amp-accordion {
+    background: var(--bg-menu);
+    color: var(--bg-main);
+  }
+  amp-accordion a{
+    background: var(--bg-menu);
+    color: var(--bg-main);
+    text-decoration: none;
+    padding: 0 5px;
+  }
+  amp-accordion .amp_a{
+  background: var(--bg-menu);
+  width: auto;
+}
     </style>
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
-
     <link rel="canonical" href="https://nuitmod.github.io/mod_i/index.html">
     <title>mod_i amp</title>
     <!-- <link rel="manifest" href="/manifest.json"> -->
@@ -26,7 +56,7 @@
       "@context": "http://schema.org",
       "@type": "Webpage",
       "url": "https://www.example.com",
-      "name": "My Webpage",
+      "name": "mod_i amp",
       "headline": "webpage title",
       "description": "Here is the description",
       "mainEntityOfPage": {
@@ -52,8 +82,107 @@
     }
     </script>
   </head>
-  <body>
-    <h6>mod_i amp version</h6>
+<body>
+<amp-accordion class="menu" disable-session-states>
+  <section>
+    <h5 class="amp_a">mod_i amp ver</h5>
+    <div>
+      <a href="https://nuitmod.github.io/ini_pwa">ini_pwa</a>
+      <a href="https://nuitmod.github.io/npx_io">in browser</a>
+      <a href="https://nuitmod.github.io/io_proj">io_proj</a>
+      <a href="https://nuitmod.github.io/mod_i">mod_i main</a>
+    </div>
+  </section>
+</amp-accordion>
+<amp-state id="my_data">
+  <script type="application/json">
+    {
+      "items":[
+      {
+        "id": 0,
+        "img_url": "../img/md_0.jpg"
+      },
+      {
+        "id": 1,
+        "img_url": "../img/md_1.JPG"
+      },
+      {
+        "id": 2,
+        "img_url": "../img/md_2.JPG"
+      },
+      {
+        "id": 3,
+        "img_url": "../img/md_3.JPG"
+      },
+      {
+        "id": 4,
+        "img_url": "../img/md_4.JPG"
+      },
+      {
+        "id": 5,
+        "img_url": "../img/md_5.JPG"
+      },
+      {
+        "id": 6,
+        "img_url": "../img/md_6.JPG"
+      },
+      {
+        "id": 7,
+        "img_url": "../img/md_7.JPG"
+      },
+      {
+        "id": 8,
+        "img_url": "../img/md_8.JPG"
+      },
+      {
+        "id": 9,
+        "img_url": "../img/md_9.JPG"
+      },
+      {
+        "id": 10,
+        "img_url": "../img/md_10.JPG"
+      },
+      {
+        "id": 11,
+        "img_url": "../img/md_11.JPG"
+      },
+      {
+        "id": 12,
+        "img_url": "../img/md_12.JPG"
+      },
+      {
+        "id": 13,
+        "img_url": "../img/md_13.JPG"
+      },
+      {
+        "id": 14,
+        "img_url": "../img/md_14.JPG"
+      },
+      {
+        "id": 15,
+        "img_url": "../img/md_15.JPG"
+      },
+      {
+        "id": 16,
+        "img_url": "../img/md_16.JPG"
+      }
+      ]
+    }
+  </script>
+</amp-state>
+<amp-list width="auto"
+  height="25"
+  layout="fixed-height"
+  src="amp-state:my_data">
+  <template type="amp-mustache">
+    <div>
+      <amp-img height="89" width="52" src="{{img_url}}"></amp-img>
+      id: {{id}}
+    </div>
+</template>
+</amp-list>
+
+
     <amp-install-serviceworker src="/sw.js"
                                data-iframe-src="install-sw.html"
                                layout="nodisplay">

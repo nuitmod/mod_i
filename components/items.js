@@ -5,7 +5,8 @@ import imob from "./mobx_store.js";
 import { autorun, toJS } from '../modules/mobx.module.js';
 import  * as jQuery from "https://unpkg.com/jquery@3.5.1/dist/jquery.min.js";
 //import  * as _ from "https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.19/lodash.min.js";
-
+//import * as amp from "https://cdn.ampproject.org/v0.js";
+//import * as amp_carousel from "https://cdn.ampproject.org/v0/amp-carousel-0.2.js";
 
 var $ = window.jQuery;
 //var __ = window._;
@@ -41,6 +42,17 @@ var I_search=()=>{
 var big_item=imob.data.filter(wm=>wm.active==true).map(wm=>html`
   <div class="big_i" key=${wm.id} >
     <img id=${wm.img_id} src="./img/${wm.img_id}.JPG"  height="139" width="92" />
+    <!-- <amp-carousel
+    layout="responsive"
+    type="slides"
+    role="region"
+    aria-label="Basic carousel"
+    autoplay
+    delay="3000"
+    >
+    <amp-img src="./img/${wm.img_id}.JPG" width="200" height="90"></amp-img>
+    <amp-img src="./img/pin1.JPG" width="200" height="90"></amp-img>
+    </amp-carousel> -->
     <div>
       <li>name: ${wm.name} </li>
       <li>color: ${wm.color} </li>
