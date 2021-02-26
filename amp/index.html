@@ -12,7 +12,7 @@
     <script async custom-element="amp-dynamic-css-classes" src="https://cdn.ampproject.org/v0/amp-dynamic-css-classes-0.1.js"></script>
     <!-- Import other AMP Extensions here -->
     <script async custom-element="amp-install-serviceworker" src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
-    <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+    <!-- <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script> -->
     <script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
     <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
     <script async custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js"></script>
@@ -50,7 +50,7 @@
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
     <link rel="canonical" href="https://nuitmod.github.io/mod_i/index.html">
     <title>mod_i amp</title>
-    <!-- <link rel="manifest" href="/manifest.json"> -->
+    <link rel="manifest" href="./manifest.json">
     <script type="application/ld+json">
     {
       "@context": "http://schema.org",
@@ -87,13 +87,14 @@
   <section>
     <h5 class="amp_a">mod_i amp ver</h5>
     <div>
-      <a href="https://nuitmod.github.io/ini_pwa">ini_pwa</a>
-      <a href="https://nuitmod.github.io/npx_io">in browser</a>
-      <a href="https://nuitmod.github.io/io_proj">io_proj</a>
+      <a href="https://nuitmod.github.io/ini_pwa/amp/">ini_pwa</a>
+      <a href="https://nuitmod.github.io/npx_io/">npx_io</a>
+      <a href="https://nuitmod.github.io/io_proj/amp/">io_proj</a>
       <a href="https://nuitmod.github.io/mod_i">mod_i main</a>
     </div>
   </section>
 </amp-accordion>
+<h4>mod_i</h4>
 <amp-state id="my_data">
   <script type="application/json">
     {
@@ -176,18 +177,18 @@
   src="amp-state:my_data">
   <template type="amp-mustache">
     <div>
-      <amp-img height="89" width="52" src="{{img_url}}"></amp-img>
+      <amp-img height="89" width="51" src="{{img_url}}"></amp-img>
       id: {{id}}
     </div>
 </template>
 </amp-list>
 
 
-    <amp-install-serviceworker src="/sw.js"
+    <amp-install-serviceworker src="../sw.js"
                                data-iframe-src="install-sw.html"
                                layout="nodisplay">
     </amp-install-serviceworker>
-    <amp-analytics type="gtag" data-credentials="include">
+    <!-- <amp-analytics type="gtag" data-credentials="include">
     <script type="application/json">
     {
       "vars" : {
@@ -200,6 +201,6 @@
       }
     }
     </script>
-    </amp-analytics>
+    </amp-analytics> -->
   </body>
 </html>
