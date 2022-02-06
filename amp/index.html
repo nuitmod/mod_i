@@ -70,7 +70,7 @@
     </style>
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
     <link rel="canonical" href="https://mod-i.vercel.app/index.html">
-    <title>mod_i amp</title>
+    <title>mod_i</title>
     <link rel="manifest" href="./manifest.json">
     <script type="application/ld+json">
     {
@@ -112,9 +112,7 @@
       <a href="https://nuitmod.github.io/npx_io/">npx_io</a>
       <a href="https://nuitmod.github.io/io_proj/amp/">io_proj</a>
       <a href="https://nuitmod.github.io/mod_i">mod_i main</a>
-    </div>
-  </section>
-</amp-accordion>
+  
 <amp-carousel
   width="350"
   height="300"
@@ -130,6 +128,11 @@
   <amp-img src="../img/gifs/gf_3.GIF" width="200" height="80"></amp-img>
   <!-- <amp-img src="../img/gifs/pin_rnv.GIF" width="200" height="80"></amp-img> -->
   </amp-carousel>
+
+  </div>
+  </section>
+</amp-accordion>
+
  <!-- <amp-accordion id="vid" disable-session-states>
   <section>
     <h5 class="amp_a">Video</h5>
@@ -239,7 +242,7 @@
     <div id="templ">
       <amp-img class="li-img" height="89" width="51" src="{{img_url}}"></amp-img>
       <span class="info">
-        id: {{id}}
+     <strong>   id: {{id}}</strong>
         info: {{inf}}
       </span>
     </div>
@@ -247,10 +250,10 @@
 </amp-list>
 
 
-    <amp-install-serviceworker src="../sw.js"
+  <!--  <amp-install-serviceworker src="../sw.js"
                                data-iframe-src="install-sw.html"
                                layout="nodisplay">
-    </amp-install-serviceworker>
+    </amp-install-serviceworker>-->
     <!-- <amp-analytics type="gtag" data-credentials="include">
     <script type="application/json">
     {
