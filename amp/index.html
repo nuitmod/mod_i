@@ -56,16 +56,11 @@
     opacity: 0.7;
   }
   #templ{
-    /* //display: block; */
-    border-radius: 3px;
+    display: flex;
+    justify-content: space-between 0;
+    border-radius: 5px;
     background-color: white;
     margin: 6px 0;
-    text-align: left;
-  }
-  .info{
-    /* margin: 2px; */
-    vertical-align: top;
-    font-weight: 500;
   }
     </style>
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
@@ -106,7 +101,7 @@
 <body>
 <amp-accordion class="menu" disable-session-states>
   <section>
-    <h5 class="amp_a">mod_i amp ver</h5>
+    <h5 class="amp_a">mod i</h5>
     <div>
       <a href="https://nuitmod.github.io/ini_pwa/amp/">ini_pwa</a>
       <a href="https://nuitmod.github.io/npx_io/">npx_io</a>
@@ -240,11 +235,12 @@
   src="amp-state:my_data">
   <template type="amp-mustache">
     <div id="templ">
-      <amp-img class="li-img" height="89" width="51" src="{{img_url}}"></amp-img>
-      <span class="info">
+      <div id="img-div"><amp-img class="li-img" height="89" width="51" src="{{img_url}}"></amp-img></div>
+      <div id="cont-div"><strong>id: {{id}}</strong> info: {{inf}}</div>
+      <!-- <span class="info">
      <strong>   id: {{id}}</strong>
         info: {{inf}}
-      </span>
+      </span> -->
     </div>
 </template>
 </amp-list>
