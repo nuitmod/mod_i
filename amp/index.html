@@ -169,7 +169,7 @@
       <a href="https://nuitmod.github.io/mod_i">mod_i main</a> -->
       <div id="sb-btn">
         <button  on='tap:sidebar'>menu</button>
-        <button  on="tap:l-area.toggleVisibility">hide</button>
+        <button  on="tap:slc.toggleVisibility">hide</button>
       </div>
 <!-- <amp-carousel
   width="350"
@@ -424,7 +424,7 @@
       </amp-list>
     </amp-mega-menu> -->
 
-    <select on="change:AMP.setState({
+    <select id="slc" on="change:AMP.setState({
         filteredProducts: my_data.items.filter(i => event.value == 'all' ? true : i.name == event.value)
       })">
       <option value="all" selected>All</option>
