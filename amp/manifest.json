@@ -1,7 +1,7 @@
 {
   "name": "mod_i amp",
   "short_name": "mod_i",
-  "start_url": ".",
+  "start_url": "./",
   "display": "standalone",
   "background_color": "#000",
   "description": "A mode pwa app.",

@@ -19,6 +19,8 @@
     <script async custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js"></script>
     <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
     <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+    <!-- <script async custom-element="amp-mega-menu" src="https://cdn.ampproject.org/v0/amp-mega-menu-0.1.js"></script> -->
+    <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
     <style amp-custom>
     /* Add your styles here */
   :root{
@@ -61,6 +63,42 @@
     border-radius: 5px;
     background-color: white;
     margin: 6px 0;
+  }
+  button{
+    margin: 2px;
+    padding: 0 8px;
+    color: ghostwhite;
+    background-color: black;
+    border: 0;
+  }
+  #sidebar{
+    background-color: rgba(0,0,0,0.8);
+    width: 220px;
+  }
+  amp-sidebar ul{
+    padding: 5px 15px
+  }
+  amp-sidebar li{
+    list-style: none;
+    padding: 5px
+  }
+  amp-sidebar a{
+    text-decoration: none;
+    color: var(--bg-main);
+  }
+  #sb-btn{
+    margin: 10px 0;
+  }
+  /* #r-area{
+    position: absolute;
+    left: 0;
+    top: 40px;
+    height: 100%;
+  } */
+  .container div{
+    display: inline;
+    /* display: flex;
+    justify-content: space-between 0; */
   }
     </style>
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
@@ -107,8 +145,8 @@
       <a href="https://nuitmod.github.io/npx_io/">npx_io</a>
       <a href="https://nuitmod.github.io/io_proj/amp/">io_proj</a>
       <a href="https://nuitmod.github.io/mod_i">mod_i main</a>
-  
-<amp-carousel
+      <div id="sb-btn"><button  on='tap:sidebar'>menu</button></div>
+<!-- <amp-carousel
   width="350"
   height="300"
   layout="responsive"
@@ -121,13 +159,24 @@
   <amp-img src="../img/gifs/gf_1.GIF" width="200" height="80"></amp-img>
   <amp-img src="../img/gifs/gf_2.GIF" width="200" height="80"></amp-img>
   <amp-img src="../img/gifs/gf_3.GIF" width="200" height="80"></amp-img>
-  <!-- <amp-img src="../img/gifs/pin_rnv.GIF" width="200" height="80"></amp-img> -->
-  </amp-carousel>
-
+  <amp-img src="../img/gifs/pin_rnv.GIF" width="200" height="80"></amp-img>
+  </amp-carousel> -->
   </div>
   </section>
 </amp-accordion>
-
+<amp-sidebar id="sidebar" layout="nodisplay" side="left">
+  <br>
+      <div>
+        <ul>
+          <li><a href="https://nuitmod.github.io/ini_pwa/amp/">ini_pwa</a></li>
+          <li><a href="https://nuitmod.github.io/mod_pwa/amp/">mod_pwa</a></li>
+          <li><a href="https://nuitmod.github.io/mod_iamp/">mod_i</a></li>
+          <li><a href="https://nuitmod.github.io/npx_io/">npx_io</a></li>
+          <li><a href="https://nuitmod.github.io/io_proj/amp/">io_proj</a></li>
+        </ul>
+      </div>  
+   
+</amp-sidebar>
  <!-- <amp-accordion id="vid" disable-session-states>
   <section>
     <h5 class="amp_a">Video</h5>
@@ -146,106 +195,140 @@
     {
       "items":[
       {
+        "values": [
+      {
         "id": 1,
+        "name": "top",
         "inf": "info info info info info",
         "img_url": "../img/md_1.JPG"
       },
       {
         "id": 2,
+        "name": "mini dress",
         "inf": "info info info info info",
         "img_url": "../img/md_2.JPG"
       },
       {
         "id": 3,
+        "name": "dress",
         "inf": "info info info info info",
         "img_url": "../img/md_3.JPG"
       },
       {
         "id": 4,
+        "name": "dress",
         "inf": "info info info info info",
         "img_url": "../img/md_4.JPG"
       },
       {
         "id": 5,
+        "name": "dress",
         "inf": "info info info info info",
         "img_url": "../img/md_5.JPG"
       },
       {
         "id": 6,
+        "name": "top",
         "inf": "info info info info info",
         "img_url": "../img/md_6.JPG"
       },
       {
         "id": 7,
+        "name": "skirt",
         "inf": "info info info info info",
         "img_url": "../img/md_7.JPG"
       },
       {
         "id": 8,
+        "name": "top",
         "inf": "info info info info info",
         "img_url": "../img/md_8.JPG"
       },
       {
         "id": 9,
+        "name": "knitwear",
         "inf": "info info info info info",
         "img_url": "../img/md_9.JPG"
       },
       {
         "id": 10,
+        "name": "dress",
         "inf": "info info info info info",
         "img_url": "../img/md_10.JPG"
       },
       {
         "id": 11,
+        "name": "top",
         "inf": "info info info info info",
         "img_url": "../img/md_11.JPG"
       },
       {
         "id": 12,
+        "name": "top",
         "inf": "info info info info info",
         "img_url": "../img/md_12.JPG"
       },
       {
         "id": 13,
+        "name": "dress",
         "inf": "info info info info info",
         "img_url": "../img/md_13.JPG"
       },
       {
         "id": 14,
+        "name": "top",
         "inf": "info info info info info",
         "img_url": "../img/md_14.JPG"
       },
       {
         "id": 15,
+        "name": "dress",
         "inf": "info info info info info",
         "img_url": "../img/md_15.JPG"
       },
       {
         "id": 16,
+        "name": "skirt",
         "inf": "info info info info info",
         "img_url": "../img/md_16.JPG"
       }
       ]
     }
+    ]
+    }
   </script>
 </amp-state>
-<amp-list width="auto"
-  height="25"
-  layout="fixed-height"
-  src="amp-state:my_data">
-  <template type="amp-mustache">
-    <div id="templ">
-      <div id="img-div"><amp-img class="li-img" height="89" width="51" src="{{img_url}}"></amp-img></div>
-      <div id="cont-div"><strong>id: {{id}}</strong> info: {{inf}}</div>
-      <!-- <span class="info">
-     <strong>   id: {{id}}</strong>
-        info: {{inf}}
-      </span> -->
-    </div>
-</template>
-</amp-list>
-
-
+<div class="container">
+  <!-- <div id="l-area">
+    data
+  </div> -->
+  <div id="r-area">
+    <!-- <amp-mega-menu height="30" layout="fixed-height"> -->
+    <amp-list width="auto"
+      height="55"
+      layout="fixed-height"
+      src="amp-state:my_data" single-item>
+      <template type="amp-mustache">
+        <nav>
+          <ul>
+        {{#values}}<li>
+        <!-- <h4 role="button">{{name}}</h4> -->
+        <!-- <button role="button">{{name}}</button> -->
+        <div id="templ" role="dialog">
+          <!-- <amp-img class="li-img" height="89" width="51" src="{{img_url}}"></amp-img> -->
+          <div id="img-div"><amp-img class="li-img" height="89" width="51" src="{{img_url}}"></amp-img></div>
+          <div id="cont-div"><strong>id: {{id}} name: {{name}}</strong> info: {{inf}}
+            <div>name: {{name}}</div>
+          </div>
+        </div>
+        {{/values}}</li>
+      </ul>
+    </nav>
+    </template>
+    </amp-list>
+    <!-- </amp-mega-menu> -->
+  </div>
+</div>
   <!--  <amp-install-serviceworker src="../sw.js"
                                data-iframe-src="install-sw.html"
                                layout="nodisplay">
