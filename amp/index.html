@@ -19,7 +19,7 @@
     <script async custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js"></script>
     <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
     <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
-    <!-- <script async custom-element="amp-mega-menu" src="https://cdn.ampproject.org/v0/amp-mega-menu-0.1.js"></script> -->
+    <script async custom-element="amp-mega-menu" src="https://cdn.ampproject.org/v0/amp-mega-menu-0.1.js"></script>
     <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
     <style amp-custom>
     /* Add your styles here */
@@ -57,7 +57,7 @@
   .li-img:hover{
     opacity: 0.7;
   }
-  #templ{
+  #templ_2{
     display: flex;
     justify-content: space-between 0;
     border-radius: 5px;
@@ -73,12 +73,13 @@
   }
   #sidebar{
     background-color: rgba(0,0,0,0.8);
-    width: 220px;
+    width: 200px;
   }
   amp-sidebar ul{
     padding: 5px 15px
   }
   amp-sidebar li{
+    text-align: center;
     list-style: none;
     padding: 5px
   }
@@ -89,13 +90,20 @@
   #sb-btn{
     margin: 10px 0;
   }
-  /* #r-area{
+  #l-area{
     position: absolute;
     left: 0;
-    top: 40px;
     height: 100%;
-  } */
-  .container div{
+    width: 10%;
+  }
+  #r-area{
+    position: absolute;
+    right: 0;
+    height: 100%;
+    width: 90%;
+  }
+  .container {
+    /* float: inherit; */
     display: inline;
     /* display: flex;
     justify-content: space-between 0; */
@@ -299,11 +307,11 @@
   </script>
 </amp-state>
 <div class="container">
-  <!-- <div id="l-area">
+  <div id="l-area">
     data
-  </div> -->
+  </div>
   <div id="r-area">
-    <!-- <amp-mega-menu height="30" layout="fixed-height"> -->
+    <amp-mega-menu height="30" layout="fixed-height">
     <amp-list width="auto"
       height="55"
       layout="fixed-height"
@@ -312,10 +320,8 @@
         <nav>
           <ul>
         {{#values}}<li>
-        <!-- <h4 role="button">{{name}}</h4> -->
-        <!-- <button role="button">{{name}}</button> -->
-        <div id="templ" role="dialog">
-          <!-- <amp-img class="li-img" height="89" width="51" src="{{img_url}}"></amp-img> -->
+        <button role="button">{{name}}</button>
+        <div id="templ_1" role="dialog">
           <div id="img-div"><amp-img class="li-img" height="89" width="51" src="{{img_url}}"></amp-img></div>
           <div id="cont-div"><strong>id: {{id}} name: {{name}}</strong> info: {{inf}}
             <div>name: {{name}}</div>
@@ -326,7 +332,22 @@
     </nav>
     </template>
     </amp-list>
-    <!-- </amp-mega-menu> -->
+    </amp-mega-menu>
+    <amp-list width="auto"
+      height="55"
+      layout="fixed-height"
+      src="amp-state:my_data" single-item>
+      <template type="amp-mustache">   
+        {{#values}}
+        <div id="templ_2">
+          <div id="img-div"><amp-img class="li-img" height="89" width="51" src="{{img_url}}"></amp-img></div>
+          <div id="cont-div"><strong>id: {{id}} name: {{name}}</strong> info: {{inf}}
+            <div>name: {{name}}</div>
+          </div>
+        </div>
+        {{/values}}
+    </template>
+  </amp-list>
   </div>
 </div>
   <!--  <amp-install-serviceworker src="../sw.js"
