@@ -45,6 +45,7 @@
     color: var(--bg-main);
     text-decoration: none;
     padding: 0 5px;
+    font-size: 11px;
   }
   amp-accordion .amp_a{
   background: var(--bg-menu);
@@ -73,7 +74,7 @@
   }
   #sidebar{
     background-color: rgba(0,0,0,0.8);
-    width: 200px;
+    width: 290px;
   }
   amp-sidebar ul{
     padding: 5px 15px
@@ -81,47 +82,45 @@
   amp-sidebar li{
     text-align: center;
     list-style: none;
-    padding: 5px
+    padding: 5px;
+    color: var(--bg-main);
+    background-color: black;
   }
   amp-sidebar a{
     text-decoration: none;
     color: var(--bg-main);
   }
   #sb-btn{
-    margin: 10px 0;
+    margin: 2px 0;
   }
   #l-area{
     margin: 5px;
     position: absolute;
     left: 0;
     height: 100%;
-    width: 10%;
+    width: 12%;
   }
   #l-area li{
     margin: 5px;
     padding: 0 2px;
-    font-size: 12px;
-    font-weight: 800;
+    font-size: 11px;
+    font-weight: 600;
   }
   #l-area li:hover{
-    color: white;
-    background-color: black;
+    background-color: white;
+    font-weight: 900;
   }
   #r-area{
     position: absolute;
     right: 0;
     height: 100%;
-    width: 90%;
+    width: 88%;
   }
-  .container {
-    /* float: inherit; */
-    display: inline;
-    /* display: flex;
-    justify-content: space-between 0; */
-  }
+  
   select{
-    background-color: black;
+    background-color: rgba(0,0,0,0.9);
     color: ghostwhite;
+    width: 220px;
   }
     </style>
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
@@ -164,11 +163,14 @@
   <section>
     <h5 class="amp_a">mod i</h5>
     <div>
-      <a href="https://nuitmod.github.io/ini_pwa/amp/">ini_pwa</a>
+      <!-- <a href="https://nuitmod.github.io/ini_pwa/amp/">ini_pwa</a>
       <a href="https://nuitmod.github.io/npx_io/">npx_io</a>
       <a href="https://nuitmod.github.io/io_proj/amp/">io_proj</a>
-      <a href="https://nuitmod.github.io/mod_i">mod_i main</a>
-      <div id="sb-btn"><button  on='tap:sidebar'>menu</button></div>
+      <a href="https://nuitmod.github.io/mod_i">mod_i main</a> -->
+      <div id="sb-btn">
+        <button  on='tap:sidebar'>menu</button>
+        <button  on="tap:l-area.toggleVisibility">hide</button>
+      </div>
 <!-- <amp-carousel
   width="350"
   height="300"
@@ -191,11 +193,34 @@
   <br>
       <div>
         <ul>
+          <amp-accordion class="menu" disable-session-states>
+            <section>
+              <h5 class="amp_a">_</h5>
+              <div>
           <li><a href="https://nuitmod.github.io/ini_pwa/amp/">ini_pwa</a></li>
           <li><a href="https://nuitmod.github.io/mod_pwa/amp/">mod_pwa</a></li>
           <li><a href="https://nuitmod.github.io/mod_iamp/">mod_i</a></li>
           <li><a href="https://nuitmod.github.io/npx_io/">npx_io</a></li>
           <li><a href="https://nuitmod.github.io/io_proj/amp/">io_proj</a></li>
+          <li><a href="https://mod-i.vercel.app/">mod_i main</a></li>
+        </div>
+      </section>
+    </amp-accordion><br>
+          <li on="tap:AMP.setState({
+            filteredProducts: my_data.items.filter(i => i.name == 'top' )
+          })">top</li>
+          <li on="tap:AMP.setState({
+            filteredProducts: my_data.items.filter(i => i.name == 'mini dress' )
+          })">mini dress</li>
+          <li on="tap:AMP.setState({
+            filteredProducts: my_data.items.filter(i => i.name == 'dress' )
+          })">dress</li>
+          <li on="tap:AMP.setState({
+            filteredProducts: my_data.items.filter(i => i.name == 'skirt' )
+          })">skirt</li>
+          <li on="tap:AMP.setState({
+            filteredProducts: my_data.items.filter(i => i.name == 'knitwear' )
+          })">knitwear</li>
         </ul>
       </div>  
    
@@ -337,21 +362,43 @@
 </amp-state>
 
 <div class="container">
-  <div id="l-area">
+  <!-- <div id="l-area">
     <amp-list width="auto"
         height="55"
         layout="fixed-height"
-        src="amp-state:items-list" >
+        src="amp-state:items-list" 
+       >
         <template type="amp-mustache">
           <nav>
             <ul>
-              <li>
-                {{name}}
-              </li>
+              <li value="{{name}}" on="tap:AMP.setState({
+                filteredProducts: my_data.items.filter(i => i.name == event.value)
+              })">{{name}}</li>
             </ul>
           </nav>
         </template>
       </amp-list>
+  </div> -->
+  <div id="l-area">
+    <nav>
+      <ul>
+        <li on="tap:AMP.setState({
+          filteredProducts: my_data.items.filter(i => i.name == 'top' )
+        })">top</li>
+        <li on="tap:AMP.setState({
+          filteredProducts: my_data.items.filter(i => i.name == 'mini dress' )
+        })">mini dress</li>
+        <li on="tap:AMP.setState({
+          filteredProducts: my_data.items.filter(i => i.name == 'dress' )
+        })">dress</li>
+        <li on="tap:AMP.setState({
+          filteredProducts: my_data.items.filter(i => i.name == 'skirt' )
+        })">skirt</li>
+        <li on="tap:AMP.setState({
+          filteredProducts: my_data.items.filter(i => i.name == 'knitwear' )
+        })">knitwear</li>
+      </ul>
+    </nav>
   </div>
   <div id="r-area">
     <!-- <amp-mega-menu height="20" layout="fixed-height">
@@ -378,15 +425,33 @@
     </amp-mega-menu> -->
 
     <select on="change:AMP.setState({
-      filteredProducts: my_data.items.filter(i => event.value == 'all' ? true : i.name == event.value)
-    })">
-    <option value="all" selected>All</option>
-    <option value="top">top</option>
-    <option value="mini dress">mini dress</option>
-    <option value="dress">dress</option>
-    <option value="skirt">skirt</option>
-    <option value="knitwear">knitwear</option>
-  </select>
+        filteredProducts: my_data.items.filter(i => event.value == 'all' ? true : i.name == event.value)
+      })">
+      <option value="all" selected>All</option>
+      <option value="top">top</option>
+      <option value="mini dress">mini dress</option>
+      <option value="dress">dress</option>
+      <option value="skirt">skirt</option>
+      <option value="knitwear">knitwear</option>
+    </select>
+  <button on="tap:AMP.setState({
+    filteredProducts: my_data.items.filter(i => i.name)
+  })">all</button>
+  <button on="tap:AMP.setState({
+    filteredProducts: my_data.items.filter(i => i.name == 'top' )
+  })">top</button>
+  <button on="tap:AMP.setState({
+    filteredProducts: my_data.items.filter(i => i.name == 'mini dress' )
+  })">mini dress</button>
+  <button on="tap:AMP.setState({
+    filteredProducts: my_data.items.filter(i => i.name == 'dress' )
+  })">dress</button>
+  <button on="tap:AMP.setState({
+    filteredProducts: my_data.items.filter(i => i.name == 'skirt' )
+  })">skirt</button>
+  <button on="tap:AMP.setState({
+    filteredProducts: my_data.items.filter(i => i.name == 'knitwear' )
+  })">knitwear</button>
     <amp-list width="auto"
       height="55"
       layout="fixed-height"
