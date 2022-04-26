@@ -33,8 +33,31 @@
   }
   body{
     -webkit-text-size-adjust: 100%;
-    background: var(--bg-main);
+     background: var(--bg-main); 
     font-size: 10px;
+  }
+  /* .light{
+    background: var(--bg-main); 
+  }
+  .dark{
+    background-color: var(--bg-menu);
+  } */
+  .wrapper {
+      /* color: var(--bg-menu); */
+      /* background-color: var(--bg-main);  */
+  
+  }
+  #dark-mode:checked ~ * {
+    background-color: black;
+	    background: black;
+      color: white;
+    }
+  #dark-mode, label[for="dark-mode"] {
+    background: white;
+    color: black;
+    position: absolute;
+    top: 2rem;
+    right: 0.25rem;
   }
   amp-accordion {
     background: var(--bg-menu);
@@ -124,7 +147,7 @@
   }
     </style>
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
-    <link rel="canonical" href="https://mod-i.vercel.app/index.html">
+    <link rel="canonical" href="https://mod-i.vercel.app/index.html/">
     <title>mod_i</title>
     <link rel="manifest" href="./manifest.json">
     <script type="application/ld+json">
@@ -158,7 +181,7 @@
     }
     </script>
   </head>
-<body>
+<body class="wrapper">
 <amp-accordion class="menu" disable-session-states>
   <section>
     <h5 class="amp_a">mod i</h5>
@@ -168,8 +191,10 @@
       <a href="https://nuitmod.github.io/io_proj/amp/">io_proj</a>
       <a href="https://nuitmod.github.io/mod_i">mod_i main</a> -->
       <div id="sb-btn">
-        <button  on='tap:sidebar'>menu</button>
-        <button  on="tap:slc.toggleVisibility">hide</button>
+        <button on='tap:sidebar'>menu</button>
+        <button on="tap:slc.toggleVisibility">hide</button>
+        <button on="tap:body.toggleClass(class=dark, force=false)">dark1</button>
+        <button on="tap:AMP.setState({ dark_theme: dark})">dark2</button>
       </div>
 <!-- <amp-carousel
   width="350"
@@ -191,12 +216,12 @@
 </amp-accordion>
 <amp-sidebar id="sidebar" layout="nodisplay" side="left">
   <br>
-      <div>
-        <ul>
-          <amp-accordion class="menu" disable-session-states>
-            <section>
-              <h5 class="amp_a">_</h5>
-              <div>
+    <div>
+      <ul>
+        <amp-accordion class="menu" disable-session-states>
+          <section>
+            <h5 class="amp_a">_</h5>
+            <div>
           <li><a href="https://nuitmod.github.io/ini_pwa/amp/">ini_pwa</a></li>
           <li><a href="https://nuitmod.github.io/mod_pwa/amp/">mod_pwa</a></li>
           <li><a href="https://nuitmod.github.io/mod_iamp/">mod_i</a></li>
@@ -222,8 +247,7 @@
             filteredProducts: my_data.items.filter(i => i.name == 'knitwear' )
           })">knitwear</li>
         </ul>
-      </div>  
-   
+      </div>     
 </amp-sidebar>
  <!-- <amp-accordion id="vid" disable-session-states>
   <section>
@@ -360,8 +384,10 @@
     }
   </script>
 </amp-state>
-
-<div class="container">
+<input id="dark-mode" type="checkbox">
+<label for="dark-mode">Switch Theme</label>
+    <!-- <div class="wrapper"> -->
+<div class="wrapper">
   <!-- <div id="l-area">
     <amp-list width="auto"
         height="55"
@@ -423,8 +449,7 @@
         </template>
       </amp-list>
     </amp-mega-menu> -->
-
-    <select id="slc" on="change:AMP.setState({
+    <select hidden id="slc" on="change:AMP.setState({
         filteredProducts: my_data.items.filter(i => event.value == 'all' ? true : i.name == event.value)
       })">
       <option value="all" selected>All</option>
