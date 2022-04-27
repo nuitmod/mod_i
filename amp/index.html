@@ -45,9 +45,10 @@
   .wrapper {
       /* color: var(--bg-menu); */
       /* background-color: var(--bg-main);  */
+      height: 100%;
   
   }
-  #dark-mode:checked ~ * {
+  #dark-mode:checked ~ * div{
     background-color: black;
 	    background: black;
       color: white;
@@ -120,7 +121,7 @@
     margin: 5px;
     position: absolute;
     left: 0;
-    height: 100%;
+    /* height: 100%; */
     width: 12%;
   }
   #l-area li{
@@ -133,10 +134,13 @@
     background-color: white;
     font-weight: 900;
   }
+  #l-area li:hover , #dark-mode:checked ~ * div#l-area{
+    color: black;
+    }
   #r-area{
     position: absolute;
     right: 0;
-    height: 100%;
+    /* height: 100%; */
     width: 88%;
   }
   
