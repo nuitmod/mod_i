@@ -34,7 +34,7 @@
   body{
     -webkit-text-size-adjust: 100%;
      background: var(--bg-main); 
-    font-size: 10px;
+     font-size: 10px;
   }
   /* .light{
     background: var(--bg-main); 
@@ -53,6 +53,12 @@
 	    background: black;
       color: white;
     }
+    #dark-mode:checked ~ * li{
+      color: white;
+    }
+    /* #dark-mode:checked ~ * div.wrapper{
+      background: black;
+    } */
   #dark-mode, label[for="dark-mode"] {
     background: white;
     color: black;
@@ -125,6 +131,7 @@
     width: 12%;
   }
   #l-area li{
+    /* color: white; */
     margin: 5px;
     padding: 0 2px;
     font-size: 11px;
@@ -185,7 +192,7 @@
     }
     </script>
   </head>
-<body class="wrapper">
+<body>
 <amp-accordion class="menu" disable-session-states>
   <section>
     <h5 class="amp_a">mod i</h5>
@@ -390,8 +397,8 @@
 </amp-state>
 <input id="dark-mode" type="checkbox">
 <label for="dark-mode">Switch Theme</label>
-    <!-- <div class="wrapper"> -->
 <div class="wrapper">
+<!-- <div class="wrapper"> -->
   <!-- <div id="l-area">
     <amp-list width="auto"
         height="55"
