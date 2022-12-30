@@ -33,7 +33,7 @@
   }
   body{
     -webkit-text-size-adjust: 100%;
-     background: var(--bg-menu); 
+     /* background: var(--bg-menu);  */
      font-size: 11px;
   }
   /* .light{
@@ -50,21 +50,35 @@
   }
   #dark-mode:checked ~ * div{
     /* background-color: black; */
-	    background: rgb(12, 12, 12);
+	    background: rgb(12, 12, 12); 
       color: white;
     }
-    #dark-mode:checked ~ * li{
+    /* #dark-mode:checked ~ * li{
       color: white;
-    }
-    /* #dark-mode:checked ~ * div.wrapper{
-      background: black;
     } */
+    /* #dark-mode:checked ~ body{
+      background: purple;
+    } */
+    
+    /* #dark-mode:checked ~ * div {
+        background-color: black;
+      } */
   #dark-mode, label[for="dark-mode"] {
     background: white;
     color: black;
     position: absolute;
     top: 2rem;
     right: 0.3rem;
+  }
+  #dark-mode{
+    padding: 5px;
+    font-weight: 300;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 50px;
+    right: 0.3rem;
+    z-index: 1;
   }
   amp-accordion {
     background: var(--bg-menu);
@@ -78,8 +92,8 @@
     font-size: 11px;
   }
   amp-accordion .amp_a{
-  background: var(--bg-menu);
-  width: auto;
+    background: var(--bg-menu);
+    width: auto;
   }
   amp-carousel{
     height: 89px;
@@ -127,9 +141,12 @@
     /* margin: 5px; */
     position: absolute;
     left: 0;
-    /* height: 100%; */
+    height: 2500px;
     width: 12%;
   }
+  /* #l-area ul{
+    background: white;
+  } */
   #l-area li{
     /* color: white; */
     margin: 5px;
@@ -140,17 +157,17 @@
   #l-area li:hover{
     background-color: white;
     font-weight: 900;
-  }
-  #l-area li:hover , #dark-mode:checked ~ * div#l-area{
     color: black;
-    }
+  }
+  /* #l-area li:hover , #dark-mode:checked ~ * div#l-area{
+    color: black;
+    } */
   #r-area{
     position: absolute;
     right: 0;
-    /* height: 100%; */
+    height: 2500px;
     width: 88%;
   }
-  
   select{
     background-color: rgba(0,0,0,0.9);
     color: ghostwhite;
@@ -193,6 +210,7 @@
     </script>
   </head>
 <body>
+  <div id="main-id">
 <amp-accordion class="menu" disable-session-states>
   <section>
     <h6 class="amp_a">mod i</h6>
@@ -225,7 +243,7 @@
   </div>
   </section>
 </amp-accordion>
-<br>
+<!-- <br> -->
 <amp-sidebar id="sidebar" layout="nodisplay" side="left">
   <br>
     <div>
@@ -549,5 +567,12 @@
     }
     </script>
     </amp-analytics> -->
-  </body>
+    <!-- <script>
+      let i=document.getElementById('dark-mode');
+     // console.log(i);
+      i.addEventListener('click', ()=>console.log(i));
+   //   i.addEventListener('mouseenter', ()=>console.log(i));
+    </script> -->
+  </div>
+</body>
 </html>
